@@ -1,6 +1,6 @@
 {
-    "name": "trustnet_ai_mobile",
-    "short_name": "trustnet_ai_mobile",
+    "name": "TrustNet AI",
+    "short_name": "TrustNet AI",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

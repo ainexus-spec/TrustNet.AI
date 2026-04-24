@@ -64,10 +64,10 @@ class TrustNetApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'TrustNet AI Flow',
+      title: 'TrustNet AI',
       theme: AppTheme.lightTheme,
       routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
     );
   }
-}
+}  
