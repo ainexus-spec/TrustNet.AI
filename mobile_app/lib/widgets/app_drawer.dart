@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../providers/user_provider.dart';
@@ -134,10 +135,16 @@ class AppDrawerTile extends StatelessWidget {
         )
       ),
       selected: isSelected,
-      onTap: () {
+      onTap: () async {
         Navigator.pop(context); // Close drawer
         if (isLogout) {
-          context.go('/role-selection');
+          final userProvider = context.read<UserProvider>();
+          await FirebaseAuth.instance.signOut();
+          userProvider.clearUser();
+          if (context.mounted) {
+            context.go('/');
+          }
+          return;
         } else if (isPush) {
           context.push(route);
         } else {
